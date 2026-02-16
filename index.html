@@ -9,60 +9,61 @@
             font-family: "Gontserrat";
             src: url('../ZAER/public/assets/fonts/Gontserrat-Regular.ttf');
         }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Gontserrat', Arial, sans-serif;
             background: #f8f9fa;
-            padding: 40px 0;
-            width: 1200px;
+            padding: 40px 16px;
+            max-width: 100%;
             margin: 0 auto;
             overflow-x: hidden;
         }
-
+        
+        /* Layout containers */
         .container {
-            width: 1000px;
+            max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
         }
-
+        
         .header-section {
             text-align: center;
             margin-bottom: 50px;
-            padding: 40px 30px;
+            padding: 40px 24px;
             background: white;
             border-radius: 8px;
         }
-
+        
         .logo {
-            width: 500px;
-            height: auto;
+            width: 100%;
+            max-width: 500px;
             margin: 0 auto 25px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-weight: bold;
         }
-
+        
         .logo img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: auto;
         }
 
         .header-section h1 {
             margin-bottom: 20px;
-            font-size: 36px;
+            font-size: clamp(28px, 5vw, 36px);
             font-weight: 700;
             color: #1a1a1a;
         }
-
+        
         .description {
             margin-bottom: 30px;
             line-height: 1.8;
-            font-size: 18px;
+            font-size: clamp(16px, 2.5vw, 18px);
             color: #555;
             max-width: 600px;
             margin-left: auto;
@@ -73,69 +74,82 @@
             display: flex;
             gap: 15px;
             justify-content: center;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
         }
-
+        
         .links a {
             padding: 12px 28px;
             background: #000;
             color: white;
             text-decoration: none;
-            border: none;
-            cursor: pointer;
             font-size: 15px;
             font-weight: 600;
             transition: all 0.3s;
-            border-radius: 0;
         }
-
+        
         .links a:hover {
             background: #333;
-            color: white;
         }
 
         .intro-section {
             text-align: center;
             margin-bottom: 30px;
-            transform: translateY(60%);
-            font-size: 100px;
+            font-size: clamp(36px, 10vw, 100px);
             font-weight: 600;
             color: #1a1a1a;
         }
 
         .video-wrapper {
-            position: relative;
+            width: 100%;
             margin-bottom: 20px;
         }
-
+        
         .video-container {
             position: relative;
-            width: 1000px;
-            height: 562.5px;
+            width: 100%;
+            padding-top: 56.25%;
             background: white;
         }
-
+        
         .video-container iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 1000px;
-            height: 562.5px;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             border: none;
         }
-
+        
         .watch-intro {
             position: absolute;
-            bottom: -60px;
-            left: 25%;
+            bottom: -40px;
+            left: 50%;
             transform: translateX(-50%);
-            font-size: 96px;
+            font-size: clamp(32px, 8vw, 96px);
             font-weight: 600;
             color: #1a1a1a;
             white-space: nowrap;
         }
 
+        @media (max-width: 768px) {
+            body {
+                padding: 24px 16px;
+            }
+        
+            .header-section {
+                padding: 32px 20px;
+            }
+        }
 
+        @media (max-width: 480px) {
+            .links a {
+                width: 100%;
+                text-align: center;
+            }
+        
+            .watch-intro {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
